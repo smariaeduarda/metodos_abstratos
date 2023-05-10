@@ -42,11 +42,18 @@ public class Program {
 			}
 		}
 		
+		double sum = 0.0;
 		System.out.println();
 		System.out.println("TAXES PAID:");
 		for (TaxPayer taxPayer : list) {
+			double tax = taxPayer.tax();
 			System.out.println(taxPayer.getName() + ": $ " + String.format( "%.2f", taxPayer.tax()));
+			sum += tax;
 		}
+		
+		System.out.println();
+		System.out.println("TAXES PAID:");
+		System.out.println("TOTAL TAXES: $ " + sum);
 		
 		
 		sc.close();
